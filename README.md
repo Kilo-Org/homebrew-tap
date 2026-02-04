@@ -1,6 +1,6 @@
 # Kilocode Homebrew Tap
 
-This is the official Homebrew tap for [Kilo](https://kilo.ai), the best AI coding agent on the planet.
+This is the official Homebrew tap for the [Kilo CLI](https://kilo.ai/cli), the most complete CLI for agentic engineering.
 
 ## Installation
 
@@ -38,6 +38,7 @@ brew upgrade kilocode
 ## Development
 
 This tap contains formulas for:
+
 - `kilocode` - The Kilo CLI tool
 
 The formulas are automatically updated via GitHub Actions when new versions are released.
