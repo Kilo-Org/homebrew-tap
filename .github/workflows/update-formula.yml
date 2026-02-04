@@ -29,14 +29,13 @@ jobs:
           fi
 
       - name: Update Homebrew formula
-        uses: mislav/bump-homebrew-formula-action@v3
-        with:
-          formula-name: kilocode
-          homebrew-tap: kilocode/homebrew-tap
-          download-url: https://registry.npmjs.org/@kilocode/cli/-/cli-${{ steps.version.outputs.version }}.tgz
-          commit-message: |
-            kilocode ${{ steps.version.outputs.version }}
-
-            Created by https://github.com/mislav/bump-homebrew-formula-action
-        env:
-          COMMITTER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ./.github/scripts/update-formula.sh "${{ steps.version.outputs.version }}"
+          
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add kilocode.rb
+          git commit -m "kilocode ${{ steps.version.outputs.version }}"
+          git push
