@@ -6,7 +6,7 @@ This is the official Homebrew tap for the [Kilo CLI](https://kilo.ai/cli), the m
 
 ```bash
 # Add the tap
-brew tap kilocode/homebrew-tap
+brew tap Kilo-Org/homebrew-tap
 
 # Install Kilo
 brew install kilocode
@@ -15,7 +15,7 @@ brew install kilocode
 Or install directly:
 
 ```bash
-brew install kilocode/homebrew-tap/kilocode
+brew install Kilo-Org/homebrew-tap/kilocode
 ```
 
 ## Usage
