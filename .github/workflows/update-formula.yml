@@ -29,13 +29,29 @@ jobs:
           fi
 
       - name: Update Homebrew formula
+        id: update
         run: |
-          ./.github/scripts/update-formula.sh "${{ steps.version.outputs.version }}"
+          if ./.github/scripts/update-formula.sh "${{ steps.version.outputs.version }}"; then
+            echo "script_success=true" >> $GITHUB_OUTPUT
+            echo "script_exit_code=0" >> $GITHUB_OUTPUT
+          else
+            exit_code=$?
+            echo "script_success=false" >> $GITHUB_OUTPUT
+            echo "script_exit_code=$exit_code" >> $GITHUB_OUTPUT
+            exit $exit_code
+          fi
           
       - name: Commit and push changes
+        if: steps.update.outputs.script_success == 'true'
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add kilocode.rb
-          git commit -m "kilocode ${{ steps.version.outputs.version }}"
-          git push
+          if git diff --quiet kilocode.rb; then
+            echo "✅ No changes needed - formula is already up to date with version ${{ steps.version.outputs.version }}"
+          else
+            echo "📤 Committing and pushing changes..."
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add kilocode.rb
+            git commit -m "kilocode ${{ steps.version.outputs.version }}"
+            git push
+            echo "✅ Formula updated successfully to version ${{ steps.version.outputs.version }}"
+          fi
