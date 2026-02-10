@@ -4,9 +4,9 @@
 class Kilocode < Formula
   desc "The most complete CLI for agentic engineering."
   homepage "https://github.com/Kilo-Org/kilo"
-  version "1.0.14"
-  url "https://registry.npmjs.org/@kilocode/cli/-/cli-1.0.14.tgz"
-  sha256 "8c034dfde1f2e4ec74c08073c37a6e42c9187569a3f507e634036d1b6faa8202"
+  version "1.0.16"
+  url "https://registry.npmjs.org/@kilocode/cli/-/cli-1.0.16.tgz"
+  sha256 "6355003bdb425ab83d4f3059c05b1d9b85f3078128cd8ccdd689c822dec70fd2"
   license "MIT"
 
   depends_on "node"
