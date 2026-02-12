@@ -9,13 +9,13 @@ This is the official Homebrew tap for the [Kilo CLI](https://kilo.ai/cli), the m
 brew tap Kilo-Org/homebrew-tap
 
 # Install Kilo
-brew install kilocode
+brew install kilo
 ```
 
 Or install directly:
 
 ```bash
-brew install Kilo-Org/homebrew-tap/kilocode
+brew install Kilo-Org/homebrew-tap/kilo
 ```
 
 ## Usage
@@ -32,13 +32,13 @@ The formula is automatically updated when new versions of the CLI are released. 
 
 ```bash
 brew update
-brew upgrade kilocode
+brew upgrade kilo
 ```
 
 ## Development
 
 This tap contains formulas for:
 
-- `kilocode` - The Kilo CLI tool
+- `kilo` - The Kilo CLI tool
 
 The formulas are automatically updated via GitHub Actions when new versions are released.
