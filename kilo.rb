@@ -5,22 +5,22 @@
 class Kilo < Formula
   desc "The AI coding agent built for the terminal."
   homepage "https://kilo.ai"
-  version "1.0.20"
+  version "1.0.21"
 
   depends_on "ripgrep"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Kilo-Org/kilo/releases/download/v1.0.20/kilo-darwin-x64.zip"
-      sha256 "c5ca6bd9f96bc7954c5e6b3555897b04ff5d03269442ec5b239da1acb871dbc4"
+      url "https://github.com/Kilo-Org/kilo/releases/download/v1.0.21/kilo-darwin-x64.zip"
+      sha256 "2c0ec42152cfde90c35cee1686a1665f55e2230fd4aefedda88a543dd8e73790"
 
       def install
         bin.install "kilo"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Kilo-Org/kilo/releases/download/v1.0.20/kilo-darwin-arm64.zip"
-      sha256 "f208de766c17043a41d0d0ef8852ca8c43104c73c67d567dc493ca1f46e8f8b8"
+      url "https://github.com/Kilo-Org/kilo/releases/download/v1.0.21/kilo-darwin-arm64.zip"
+      sha256 "734afffa0bee33b3e0e64ad7732704c6267565ba89811197a7352b5a683b2da3"
 
       def install
         bin.install "kilo"
@@ -30,15 +30,15 @@ class Kilo < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/Kilo-Org/kilo/releases/download/v1.0.20/kilo-linux-x64.tar.gz"
-      sha256 "8cf9d35a43715fe34b8c20e0c781e1a4ba20a6afe57a9a628f5f818210c55d5d"
+      url "https://github.com/Kilo-Org/kilo/releases/download/v1.0.21/kilo-linux-x64.tar.gz"
+      sha256 "297c046bbc42d731a5a00c47c848c39775b1448c1a3de4f0fbecf071a37d747b"
       def install
         bin.install "kilo"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/Kilo-Org/kilo/releases/download/v1.0.20/kilo-linux-arm64.tar.gz"
-      sha256 "ad12f6dbf5e942ff121b939cc47d599471d19ec1a3380d520b272d4556a7ca52"
+      url "https://github.com/Kilo-Org/kilo/releases/download/v1.0.21/kilo-linux-arm64.tar.gz"
+      sha256 "80085963e855dfbf5dcdd1ab326cfe0f18b46d903a69c563b701ca2d276e6f84"
       def install
         bin.install "kilo"
       end
