@@ -12,7 +12,7 @@ class Kilo < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/Kilo-Org/kilocode/releases/download/v7.2.1/kilo-darwin-x64.zip"
-      sha256 "eb190683385140ca38d8a69f4f25dbfc171a433f29e45861fad4bbe32fd01847"
+      sha256 "a71822618fcf6f1a9f47495bf021c4e8b5ebda0af3e5d163f02e87fa9ba42a82"
 
       def install
         bin.install "kilo"
@@ -20,7 +20,7 @@ class Kilo < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/Kilo-Org/kilocode/releases/download/v7.2.1/kilo-darwin-arm64.zip"
-      sha256 "8aa34194d45c6e52f83d3202fffc1d1d7d8bcc7cbbc0d1a9ab547f239fc3f38a"
+      sha256 "1ab792e1b85192bcb6195f610cab8b8309102eb4f16674dbf05820e9eb919905"
 
       def install
         bin.install "kilo"
@@ -31,18 +31,17 @@ class Kilo < Formula
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
       url "https://github.com/Kilo-Org/kilocode/releases/download/v7.2.1/kilo-linux-x64.tar.gz"
-      sha256 "c1c0f777dcf3682beb0896d02c26f026017b3887f168710932405e7c9459759f"
+      sha256 "d944a4d1ecd787793137fb13e337e06205d5000a9068d566a3a4f4461f9bb386"
       def install
         bin.install "kilo"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
       url "https://github.com/Kilo-Org/kilocode/releases/download/v7.2.1/kilo-linux-arm64.tar.gz"
-      sha256 "24aa60d5ddc4e1f46b7f53f32c52a32fe9bebdf2c074500844e177fd1135f2ee"
+      sha256 "b803366a5b79a28709dc2d406f8818f7a9c99901a90a98f9f2316a14cb2ae70c"
       def install
         bin.install "kilo"
       end
     end
   end
 end
-
