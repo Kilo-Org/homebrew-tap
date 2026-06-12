@@ -5,14 +5,14 @@
 class Kilo < Formula
   desc "The AI coding agent built for the terminal."
   homepage "https://kilo.ai"
-  version "7.3.41"
+  version "7.3.45"
 
   depends_on "ripgrep"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Kilo-Org/kilocode/releases/download/v7.3.41/kilo-darwin-x64.zip"
-      sha256 "362de9214db758c97bef4c8afe4aa6812070e66607112b0cf5f6e6449934246c"
+      url "https://github.com/Kilo-Org/kilocode/releases/download/v7.3.45/kilo-darwin-x64.zip"
+      sha256 "d37d4b018e8ab49e089d08621f9b4c75534b0c91781ddeaba25c009302716a0b"
 
       def install
         libexec.install "kilo", "tree-sitter"
@@ -20,8 +20,8 @@ class Kilo < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Kilo-Org/kilocode/releases/download/v7.3.41/kilo-darwin-arm64.zip"
-      sha256 "785fcbcf63a93d9f59604c696f3f0a4ddbb0436a6e4a7afed5545be7f3fb93b5"
+      url "https://github.com/Kilo-Org/kilocode/releases/download/v7.3.45/kilo-darwin-arm64.zip"
+      sha256 "95c0ae45909771c22853a86c11bc38139b4215e2d6d0e28571663e27fdd1f635"
 
       def install
         libexec.install "kilo", "tree-sitter"
@@ -32,16 +32,16 @@ class Kilo < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/Kilo-Org/kilocode/releases/download/v7.3.41/kilo-linux-x64.tar.gz"
-      sha256 "f3c3e83b7aca3a56381481afa3ed91f1de6626f1d5b65bad8965107c0b660ebb"
+      url "https://github.com/Kilo-Org/kilocode/releases/download/v7.3.45/kilo-linux-x64.tar.gz"
+      sha256 "13cb2e526e01040842afd0a7c1b04bbbcb67fc8913e85e06d8d3f5295e8c9843"
       def install
         libexec.install "kilo", "tree-sitter"
         (bin/"kilo").write_env_script libexec/"kilo", KILO_TREE_SITTER_WASM_DIR: libexec/"tree-sitter"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/Kilo-Org/kilocode/releases/download/v7.3.41/kilo-linux-arm64.tar.gz"
-      sha256 "8aab079957eb0b9429b57d89b169e4ca0c111ad84f429201e25a33c73255456b"
+      url "https://github.com/Kilo-Org/kilocode/releases/download/v7.3.45/kilo-linux-arm64.tar.gz"
+      sha256 "175a66995fe9fa52da57936ab14099ccb97cc0769627ba0236d4413c6b41b3f6"
       def install
         libexec.install "kilo", "tree-sitter"
         (bin/"kilo").write_env_script libexec/"kilo", KILO_TREE_SITTER_WASM_DIR: libexec/"tree-sitter"
